@@ -1,0 +1,2 @@
+https://medium.com/@srnky/what-is-django-1b08814fde26
+https://docs.djangoproject.com/en/6.0/intro/tutorial01/
