@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <style>
+        * {
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- { % block content %} -->
+
+    <div class="form">
+
+        <h2>Contact Form</h2>
+
+        <form method="post" action="/form/" id="form">
+            {% csrf_token %}
+
+            <label>ID</label>
+            <input type="text" id="id" >
+
+            <label>Name</label>
+            <input type="text" id="username" name="username">
+
+            <label>Email</label>
+            <input type="email" id="email" name="useremail">
+
+            <label>phone</label>
+            <input type="phone" id="phone" name="userphone">
+
+            <button type="submit">OK</button>
+
+        </form>
+
+    </div>
+
+
+    <table border="2">
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+        </tr>
+
+        <tbody id="tbl">
+            {% for i in users %}
+
+            <tr>
+                <td> {{i.id}} </td>
+                <td>{{i.name}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.phone}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+    <!-- {% endblock % } -->
+
+</body>
+
+</html>
